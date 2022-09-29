@@ -5,3 +5,5 @@ export { default as CookiesConsentButton } from './CookiesConsentButton.vue';
 export { default as CookiesConsentModal } from './CookiesConsentModal.vue';
 export { default as CookiesConsentSwitch } from './CookiesConsentSwitch.vue';
 
+import VueCookies from 'vue-cookies';
+Vue.use(VueCookies);

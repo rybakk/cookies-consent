@@ -1,5 +1,5 @@
 <template>
-    <div v-sticky sticky-side="bottom">
+    <div v-sticky sticky-side="bottom" v-if="showCookieComply">
         <aside class="cookie-comply">
             <div class="cookie-comply__header">
                 <h3 class="cookie-comply__header-title">
@@ -73,12 +73,12 @@ export default {
         isModalOpen: !1,
     }),
     mounted() {
-        localStorage.getItem('cookies-accepted') && (this.showCookieComply = !1);
+        this.$cookies.isKey('cookies-accepted') && (this.showCookieComply = !1);
     },
     methods: {
         handleAcceptAll() {
             (this.showCookieComply = !1),
-            localStorage.setItem('cookies-accepted', 'all'),
+            this.$cookies.set('cookies-accepted', 'all', 60 * 60 * 24 * 365, '/');
             this.$emit('on-accept-all-cookies');
         },
         openPreferences() {
@@ -87,7 +87,7 @@ export default {
         onSave(e) {
             (this.isModalOpen = !1), (this.showCookieComply = !1);
             const o = Object.values(e);
-            localStorage.setItem('cookies-accepted', JSON.stringify(o)),
+            this.$cookies.set('cookies-accepted', JSON.stringify(o), 60 * 60 * 24 * 365, '/');
             this.$emit('on-save-cookie-preferences', o);
         },
     },
