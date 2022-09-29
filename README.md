@@ -5,8 +5,6 @@
 
 Nice and clean component to display message about cookies in Vue
 
-- 🎬 [Demo](https://swiftxru.github.io/vue-cookies-consent/)
-
 ## 📦 Installation
 
 ### NPM
@@ -24,11 +22,7 @@ Nice and clean component to display message about cookies in Vue
     <cookies-consent :preferences="preferences" />
 </template>
 <script>
-  import CookiesConsent from 'vuejs-cookies-consent'
   export default {
-    components: {
-      CookiesConsent
-    },
     data() {
         preferences: [
             {
