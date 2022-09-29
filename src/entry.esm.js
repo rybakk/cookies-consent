@@ -1,4 +1,4 @@
-
+import Vue from 'vue';
 // Import vue components
 import * as components from '@/lib-components/index';
 
