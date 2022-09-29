@@ -1,6 +1,6 @@
 {
   "name": "vuejs-cookies-consent",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Nice and clean component to display message about cookies in Vue",
   "keywords": [
     "vue",
